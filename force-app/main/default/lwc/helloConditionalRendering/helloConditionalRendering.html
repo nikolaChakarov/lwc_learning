@@ -11,6 +11,16 @@
                 <template if:true={isVisible}>
                     <div>Welcome to Zero to Hero LWC</div>
                 </template>
+
+                <template if:false={isVisible}>
+                    <div>Invidsible part...if:false</div>
+                </template>
+
+                <lightning-input onchange={handleChange} type="text" label="Enter some text"></lightning-input>
+
+                <template if:true={helloMessage}>
+                    <div>The answer is {name}!</div>
+                </template>
             </div>
     </lightning-card>
 </template>
