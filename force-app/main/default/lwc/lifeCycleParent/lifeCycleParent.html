@@ -3,7 +3,20 @@
         <div class="slds-maround_medium">
             <input type="text" onkeyup={changeHandler}>
             {name}
-            <c-life-cycle-child></c-life-cycle-child>
+
+        <hr />
+        <lightning-button
+            variant="brand"
+            label={labelBtn}
+            title="Show Child"
+            onclick={handleClick}
+            class="slds-m-left_x-small"
+        >
+        </lightning-button>
+
+            <template if:true={showChild}>
+                <c-life-cycle-child></c-life-cycle-child>
+            </template>
         </div>
    </lightning-card>
 </template> 

@@ -29,6 +29,11 @@
 // DO NOT USE IT: to change the state or update a property of a component;
 // Don't update a wire adapter configuration object property in renderCallback(), as it can result in an infinite loop;
 
+// disconnectedCallback() mthod
+// Fires when the component is removed from the DOM;
+// it flows from parent to child;
+// this callback mehtod is specific to Lightning Web Component, it isn't from HTML custom elements specification;
+
 import { LightningElement } from 'lwc';
 
 export default class LifeCycleParent extends LightningElement {
@@ -47,6 +52,15 @@ export default class LifeCycleParent extends LightningElement {
     name;
     changeHandler(e) {
         this.name = e.target.value;
+    }
+
+    showChild = true;
+    handleClick(e) {
+        this.showChild = !this.showChild;
+    }
+
+    get labelBtn() {
+        return this.showChild ? 'Remove Child' : 'Show Child';
     }
     
 }
