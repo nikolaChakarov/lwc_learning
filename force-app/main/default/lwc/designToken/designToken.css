@@ -1,0 +1,4 @@
+div {
+    color: var(--lwc-brandAccessibleActive);
+    background: var(--lwc-colorBackground);
+}
