@@ -29,10 +29,21 @@
 // DO NOT USE IT: to change the state or update a property of a component;
 // Don't update a wire adapter configuration object property in renderCallback(), as it can result in an infinite loop;
 
-// disconnectedCallback() mthod
+// disconnectedCallback() method
 // Fires when the component is removed from the DOM;
 // it flows from parent to child;
 // this callback mehtod is specific to Lightning Web Component, it isn't from HTML custom elements specification;
+
+// errorCallback() method
+// This method is called when a descendant component throws an error in one of its callback;
+// The error argument is a JavaScript native object, and the stack argumlent is a string;
+// This callback method is specific to Lightning Web Components, it isn't the HTML custom elements specification;
+
+// RENDER() method
+// Render is a method that tells the component which template to load based on some conditions. It always return the template reference (which template to load);
+// The render() method is not technically a lifecycle hook. It is a protected method on the LightningElement class;
+// Call this method to update the UI. It may be called before or after connectedCallback();
+// It's rare to call render() in a component. The main use case is to conditionally render a tempate;
 
 import { LightningElement } from 'lwc';
 
@@ -61,6 +72,12 @@ export default class LifeCycleParent extends LightningElement {
 
     get labelBtn() {
         return this.showChild ? 'Remove Child' : 'Show Child';
+    }
+
+    errorCallback(err, stack) {
+        // throw from child error in eny of the callbacks
+        const str = Object.values(err)
+        console.log(JSON.stringify(str.join('')));
     }
     
 }

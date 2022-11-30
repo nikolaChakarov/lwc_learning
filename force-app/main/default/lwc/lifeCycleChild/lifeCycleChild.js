@@ -11,6 +11,10 @@ export default class LifeCycleChild extends LightningElement {
     
     connectedCallback() {
         console.log('child connectedCallback() called');
+
+        // doesn't send enything in the parent errorCallback(); ?
+        // throw new Error('Loading of child component faild...')
+        throw ('Loading of child component faild...')
     }
     
     disconnectedCallback() {
