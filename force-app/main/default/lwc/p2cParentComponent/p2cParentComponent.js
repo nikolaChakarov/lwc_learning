@@ -26,4 +26,10 @@ export default class P2cParentComponent extends LightningElement {
     changeHandler(e) {
         this.progress = Number(e.target.value);
     }
+
+    handleClick(e) {
+        this.template.querySelector('c-p2c-slider-component').resetSlider();
+    }
+
+
 }

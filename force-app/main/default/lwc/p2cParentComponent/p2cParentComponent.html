@@ -18,12 +18,19 @@
     <lightning-card title="Data passing on action">
         <div class="slds-m-around_medium">
             <lightning-input
-                type="number"
-                label="Enter percentage"
-                onchange={changeHandler}
-                value={progress}
+            type="number"
+            label="Enter percentage"
+            onchange={changeHandler}
+            value={progress}
             ></lightning-input>
             <c-p2c-progress-component progress={progress}></c-p2c-progress-component>
         </div>
     </lightning-card>
+    
+    <div  class="slds-m-bottom_medium"></div>
+    <!--Example of calling child method from parent component-->
+    <lightning-button label="Reset Slider" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+    <c-p2c-slider-component
+
+    ></c-p2c-slider-component>
 </template>
