@@ -1,7 +1,7 @@
 import { LightningElement } from 'lwc';
 
 export default class P2cParentComponent extends LightningElement {
-    message = 'message from parent to child...';
+    messageParent = 'message from parent to child...';
     progress = 10;
 
     carouselData = [

@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="CSS composition">
+        <div class="slds-p-around_medium">
+            <h1>parent css component</h1>
+
+            <c-css-child-demo class="yellow"></c-css-child-demo>
+
+            <c-css-child-demo>
+                <p>Slot one</p>
+            </c-css-child-demo>
+
+            <c-css-child-demo class="slot-test">
+                <p>Slot two</p>
+            </c-css-child-demo>
+        </div>
+    </lightning-card>
+</template>

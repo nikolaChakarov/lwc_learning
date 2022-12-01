@@ -1,0 +1,15 @@
+h1 {
+    font-size: 30px;
+    color: red;
+}
+
+c-css-child-demo {
+    display: block;
+    background: orangered;
+    color: #fff;
+    padding: 10px;
+}
+
+p {
+    font-weight: bold;
+}
