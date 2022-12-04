@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="LWC LMC Component A">
+        <div class="slds-m-around_medium">
+            <lightning-input
+                type="text"
+                label="Enter message to publish"
+                onkeyup={inputHandler}
+            ></lightning-input>
+
+            <div class="slds-m-around_medium">
+                <lightning-button
+                    label="Publish"
+                    onclick={publishMessage}
+                ></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>
