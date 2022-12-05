@@ -4,3 +4,15 @@
     align-items: center;
     flex-direction: column;
 }
+
+.score-panel {
+    text-align: left;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.restart {
+    cursor: pointer;
+}
