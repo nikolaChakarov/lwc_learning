@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Toast Notifications">
+        <div class="slds-m-around_medium">
+            <lightning-button
+                label="Success"
+                variant="brand"
+                onclick={toastHandler}
+            ></lightning-button>
+
+            <lightning-button
+                label="Error"
+                variant="brand"
+                onclick={toastHandlerTwo}
+            ></lightning-button>
+
+            <lightning-button
+                label="Warning"
+                variant="brand"
+                onclick={toastHandlerThree}
+            ></lightning-button>
+
+            <lightning-button
+                label="Info"
+                variant="brand"
+                onclick={toastHandlerFour}
+            ></lightning-button>
+        </div>
+    </lightning-card>
+</template>
