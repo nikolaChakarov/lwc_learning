@@ -2,17 +2,31 @@
     <div class="container">
         <lightning-card title="Memory Game">
             <div class="slds-p-around_medium">
-                
+
                 <section class="score-panel">
-                    <span class="moves">1  Move(s)</span>
-                    <div class="timer">10 seconds</div>
-                    <div class="restart">
+                    <span class="moves">{moves}  Move(s)</span>
+                    <div class="timer">time: {time}</div>
+                    <div
+                        class="restart"
+                        onclick={restartGame}
+                    >
                         <i class="fa fa-repeat" aria-hidden="true"></i>
                     </div>
                 </section>
 
                 <section class="game-panel">
-                    game area
+                    <ul class="deck card-deck grid-container">
+                        <template for:each={cards} for:item="card">
+                            <li
+                                key={card.id}
+                                class={card.listClass}
+                                type={card.type}
+                                onclick={displayCard}
+                            >
+                            <i class={card.icon}></i>
+                        </li>
+                        </template>
+                    </ul>
                 </section>
             </div>
         </lightning-card>
