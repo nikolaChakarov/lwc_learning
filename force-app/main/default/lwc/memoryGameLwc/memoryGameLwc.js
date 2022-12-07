@@ -12,6 +12,8 @@ export default class MemoryGameLwc extends LightningElement {
     timerId;
     counter = 0;
     match = 0;
+
+    showModal = false;
     
     cards = [
         {id: 1, listClass: 'card', type: 'diamond', icon: 'fa fa-diamond'},
@@ -32,7 +34,9 @@ export default class MemoryGameLwc extends LightningElement {
         {id: 16, listClass: 'card', type: 'cube', icon: 'fa fa-cube'},
     ];
 
-    
+    closeModal() {
+        this.showModal = false;
+    }
 
     renderedCallback() {
         if (this.isLibLoaded) return;
@@ -77,7 +81,10 @@ export default class MemoryGameLwc extends LightningElement {
             this.clicked = [];
 
             
-            if (this.match === this.cards.length / 2) clearInterval(this.timerId);
+            if (this.match === this.cards.length / 2) {
+                clearInterval(this.timerId);
+                this.showModal = true;
+            }
             return;
         };
 

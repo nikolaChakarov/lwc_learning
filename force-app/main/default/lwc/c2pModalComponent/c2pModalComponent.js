@@ -8,7 +8,7 @@ export default class C2pModalComponent extends LightningElement {
 
         this.dispatchEvent(new CustomEvent('childcustomevent', {
             detail: {
-                msg:  'Moda Closed Successfully!'
+                msg:  'Modal Closed Successfully!'
             },
             bubbles: true
         }));

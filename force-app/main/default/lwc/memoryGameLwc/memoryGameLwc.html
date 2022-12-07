@@ -30,5 +30,14 @@
                 </section>
             </div>
         </lightning-card>
+
+        <template if:true={showModal}>
+            <c-memory-game-modal
+                onclosemodal={closeModal}
+                onrestartgame={restartGame}
+                moves-ch={moves}
+                time-ch={time}
+            ></c-memory-game-modal>
+        </template>
     </div>
 </template>
