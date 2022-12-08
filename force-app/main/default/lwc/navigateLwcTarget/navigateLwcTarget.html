@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Navigate to Target">
+        <div class="slds-m-around_medium">
+           <p>Welcome to the Navigate LWC TARGET</p>
+
+           <p>The RecordId is: {recordId}</p>
+           <ul>
+            <template for:each={test.arr} for:item="record">
+                <li
+                    key={record}    
+                >Record: {record}</li>
+            </template>
+           </ul>
+        </div>
+    </lightning-card>
+</template>

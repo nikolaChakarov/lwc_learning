@@ -1,16 +1,15 @@
 import { LightningElement } from 'lwc';
 import { NavigationMixin } from 'lightning/navigation';
 
-export default class NavigateToNavItemPage extends NavigationMixin(LightningElement) {
+export default class NavigateToWebPage extends NavigationMixin(LightningElement) {
 
-    navigateToTab() {
+    navigateToWebPage() {
         this[NavigationMixin.Navigate]({
-            type: 'standard__navItemPage',
+            type: 'standard__webPage',
             attributes: {
-                apiName: 'Lifecycle_Hooks',
+                url: 'http://www.abv.bg'
             }
         })
     }
-
 
 }

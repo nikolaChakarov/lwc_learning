@@ -1,0 +1,53 @@
+<template>
+    
+   <div class="container">
+
+        <lightning-card>
+
+            <div class="slds-p-around_medium">
+                <h1>Hang Game - nc</h1>
+
+                <section class="score-panel">
+                    <p>Time: {time}</p>
+                    <p>Moves: {moves}</p>
+
+                </section>
+
+                <section class="game-control">
+                        <!-- Default/basic -->
+                        <lightning-input
+                            type="text"
+                            label="Enter a letter"
+                            placeholder="only one..."
+                            class="my-input"
+                            onkeyup={handleInputChange}
+                        ></lightning-input>
+
+                        <lightning-button
+                            label="Check"
+                            onclick={handleCheck}
+                        ></lightning-button>
+                </section>
+
+                <section class="game-panel">
+                    <ul class="word">
+                        <template for:each={currentWord} for:item="letter">
+                            <li
+                                key={letter}
+                                class="letter"
+                            >
+                                <template if:true={isInUse}>
+                                    <span>{letter}</span>
+                                </template>
+                            </li>
+                        </template>
+                    </ul>
+                </section>
+            </div>
+        
+
+        </lightning-card>
+
+   </div>
+
+</template>
