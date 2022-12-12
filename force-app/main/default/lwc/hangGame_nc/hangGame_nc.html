@@ -23,26 +23,36 @@
                             onkeyup={handleInputChange}
                         ></lightning-input>
 
-                        <lightning-button
+                        <!-- <lightning-button
                             label="Check"
                             onclick={handleCheck}
-                        ></lightning-button>
+                        ></lightning-button> -->
                 </section>
 
                 <section class="game-panel">
                     <ul class="word">
-                        <template for:each={currentWord} for:item="letter">
+                        <template for:each={currentWord} for:item="el">
                             <li
-                                key={letter}
+                                key={el.letter}
                                 class="letter"
                             >
-                                <template if:true={isInUse}>
-                                    <span>{letter}</span>
+                                <template if:true={el.isInWord}>
+                                    <span>{el.letter}</span>
                                 </template>
                             </li>
                         </template>
                     </ul>
                 </section>
+
+                <!-- <section>
+                    <ul class="word">
+                        <template for:each={guess} for:item="letter">
+                            <li key={letter} class="not-in-use">
+                                {letter}
+                            </li>
+                        </template>
+                    </ul>
+                </section> -->
             </div>
         
 
