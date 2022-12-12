@@ -14,7 +14,7 @@ export default class HangGame_nc extends LightningElement {
 
     words = ['Viva Las Vegas', '4 aces', 'Bond James Bond'];
     @track guess = [];
-    letters = [];
+    @track letters = [];
 
     handleInputChange(e) {
         
@@ -30,6 +30,8 @@ export default class HangGame_nc extends LightningElement {
         }
         
         this.letter = e.target.value.trim();
+
+        this.handleCheck();
     }
 
     handleCheck() {
@@ -37,20 +39,20 @@ export default class HangGame_nc extends LightningElement {
 
         this.moves++;
 
-        if (this.currentWord.toLowerCase().includes(this.letter.toLowerCase())) {
-            this.letters.push(this.letter);
-
-            const set = new Set(this.letters);
-
-            this.letters = [...set];
-        }
+        this.currentWord.forEach(el => {
+            if (el.letter.toLowerCase() === this.letter.toLowerCase()) {
+                el.isInWord = true;
+                return;
+            }
+            this.guess.push(this.letter);
+        })
 
         console.log(JSON.stringify(this.letters));
     }
 
-    get isInUse() {
-        return this.letters.includes(this.letter);
-    }
+    // get isInUse() {
+    //     return this.letters.includes(this.letter);
+    // }
     
 
     makeCustomStyles() {
@@ -73,6 +75,10 @@ export default class HangGame_nc extends LightningElement {
     initWord() {
         let index = Math.floor(Math.random() * this.words.length);
         this.currentWord = this.words[index];
+
+        this.currentWord = this.currentWord
+            .split('')
+            .map(el => ({ letter: el, isInWord: false }))
     
         console.log(JSON.stringify(this.currentWord));
     }

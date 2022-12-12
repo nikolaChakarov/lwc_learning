@@ -3,6 +3,10 @@
 // import objectName from '@salesforce/schema/objectReference';
 // import filedName from '@salesforce/schema/object.fieldReference';
 
+// Lightning Data Service is a centralized data cacheng framework and it is build on top of User Inerface API
+// Browser { Lightning Web Component -> fetch record -> Lightning Data Service (if record is NOT available save data in CASHE)  }  -> Server { UI / API  -> Database } (back to the Lightning Web Component);
+// Browser { Lightning Web Component -> fetch record -> Lightning Data Service (if record is available, fetch from CAHSE)  } (back to the Lightning Web Component);
+
 import { LightningElement, api } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
