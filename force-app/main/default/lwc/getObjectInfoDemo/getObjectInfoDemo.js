@@ -37,7 +37,7 @@ export default class GetObjectInfoDemo extends LightningElement {
         if (data) {
             this.objectInfos = data;
 
-            console.log(this.objectInfos);
+            // console.log(this.objectInfos);
         }
     }
 
