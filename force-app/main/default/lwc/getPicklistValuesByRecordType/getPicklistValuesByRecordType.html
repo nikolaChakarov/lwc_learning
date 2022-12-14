@@ -1,5 +1,29 @@
 <template>
     <lightning-card title="getPicklistValuesByRecordType">
-        <div class="slds-m-around_medium"></div>
+        <div class="slds-m-around_medium">
+            <lightning-combobox
+            data-name="ownership"
+            name="Ownership"
+            label="Ownership"
+            value={ownershipSelected}
+            placeholder="Select Ownership"
+            options={ownershipList}
+            onchange={handlePicklistChange} ></lightning-combobox>
+
+            <p>Selected Ownership: <strong>{ownershipSelected}</strong></p>
+        </div>
+
+        <div class="slds-m-around_medium">
+            <lightning-combobox
+            data-name="rating"
+            name="Rating"
+            label="Rating"
+            value={ratingSelected}
+            placeholder="Select Rating"
+            options={ratingOptions}
+            onchange={handlePicklistChange} ></lightning-combobox>
+
+            <p>Selected Rating: <strong>{ratingSelected}</strong></p>
+        </div>
     </lightning-card>
 </template>
