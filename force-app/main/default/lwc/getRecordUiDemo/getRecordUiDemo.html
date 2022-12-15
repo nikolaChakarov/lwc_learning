@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="getRecourdUi demo">
+        <div class="slds-m-around_medium">
+            <template for:each={formFields} for:item="item">
+                    <p key={item}><strong>{item.label}</strong>: {item.value}</p>
+                </template>
+            </div>
+    </lightning-card>
+</template>
