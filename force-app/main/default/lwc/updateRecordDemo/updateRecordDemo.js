@@ -54,6 +54,7 @@ export default class UpdateRecordDemo extends LightningElement {
         Promise.all(promises)
             .then(() => {
                 console.log('Contact updated successfully');
+                this.draftValues = [];
             })
             .catch(err => console.log(err))
     }
