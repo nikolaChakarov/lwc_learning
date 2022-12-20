@@ -1,6 +1,8 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, api } from 'lwc';
+import generatePDF from '@salesforce/apex/pdfController.generatePDF';
 
 export default class PdfGenetationDemo extends LightningElement {
+    @api recordId;
     // imageUrl = 'https://www.sparksuite.com/images/logo.png';
     imageUrl = 'https://cdn-images-1.medium.com/max/980/1*TRe_0SuNo4AWLzbkJZss8Q@2x.png';
 
@@ -34,6 +36,12 @@ export default class PdfGenetationDemo extends LightningElement {
 
     pdfHandler() {
         let content = this.template.querySelector('.container');
-        console.log(content.outerHTML);
+        // console.log(content.outerHTML);
+        generatePDF({ recordId: this.recordId, htmlData: content.outerHTML })
+            .then(res => {
+                // console.log(res);
+                window.open(`https://platform-customization-5959-dev-ed.scratch.file.force.com/servlet/servlet.FileDownload?file=${res.Id}`)
+            })
+            .catch(err => console.log(err));
     }
 }

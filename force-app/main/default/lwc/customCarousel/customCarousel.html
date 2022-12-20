@@ -1,0 +1,11 @@
+<template>
+    <div>
+        <template for:each={slidesData} for:item="slide">
+            <img
+                key={slide}
+                src={slide.image}
+                alt="slide_image" 
+            />
+        </template>
+    </div>
+</template>
