@@ -1,11 +1,37 @@
 <template>
-    <div>
+    <div
+        class="slds-is-relative container"
+        onmouseenter={stopCarousel}
+        onmouseleave={startCarousel}
+    >
         <template for:each={slidesData} for:item="slide">
-            <img
+           <div key={slide} class={slide.slideClass}>
+                <div class="slideNumbers">{slide.slideIndex}/{slidesData.length}</div>
+
+                <img
+                    src={slide.image}
+                    alt="slide_image" 
+                />
+                
+                <div class="text-section slds-p-around_medium">
+                    <h3 class="slds-text-heading_large">{slide.heading}</h3>
+                    <div class="slds-text-heading_small">{slide.description}</div>
+                </div>
+            </div>
+        </template>
+     
+        <a class="prev" onclick={handlePrev}>&#10094;</a>
+        <a class="next" onclick={handleNext}>&#10095;</a>
+    </div>
+
+    <div class="slds-text-align_center slds-p-around_medium">
+        <template for:each={slidesData} for:item="slide" for:index="index">
+            <span
                 key={slide}
-                src={slide.image}
-                alt="slide_image" 
-            />
+                class={slide.dotClass}
+                onclick={handleDotClick}
+                data-dot={index}
+            ></span>
         </template>
     </div>
 </template>

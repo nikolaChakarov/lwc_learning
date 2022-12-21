@@ -1,5 +1,10 @@
 <template>
-    <c-custom-carousel
-        slides-data={slides}
-    ></c-custom-carousel>
+    <div class="wrapper">
+        <c-custom-carousel
+            slides-data={slides}
+            delay-child={delay}
+            scroll-child={scroll}
+            counter={counter}
+        ></c-custom-carousel>
+    </div>
 </template>
